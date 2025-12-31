@@ -34,3 +34,8 @@ def divide(op: Operation):
     if op.b == 0:
         return {"error": "Division by zero"}
     return {"result": op.a / op.b}
+
+from fastapi.staticfiles import StaticFiles
+
+app.mount("/", StaticFiles(directory="static", html=True), name="static")
+
